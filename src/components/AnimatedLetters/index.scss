@@ -1,0 +1,45 @@
+.text-animate {
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn 1s 1s;
+  animation-fill-mode: forwards;
+  min-width: 10px;
+}
+.text-animate-hover {
+  min-width: 10px;
+  display: inline-block;
+  animation-fill-mode: both;
+  
+  &:hover {
+    animation: rubberBand 1s;
+    color: #ffd700;
+  }
+
+
+}
+// @keyframes rubberBand {
+//   0% {
+//     transform: scale3d(1,1,1);
+//   }
+//   35% {
+//     transform: scale3d(1.25,.75,1);
+//   }
+//   40% {
+//     transform: scale3d(.75,1,1);
+//   }
+//   65% {
+//     transform: scale3d(1.2,.8,1);
+//   }
+//   80% {
+//     transform: scale3d(1,1,1);
+//   }
+//   100% {
+//     transform: scale3d(1,1,1);
+//   }
+// }
+
+@for $i from 1 through 37 {
+  .text-animate._#{$i} {
+    animation-delay: #{$i / 10}s;
+  }
+}
